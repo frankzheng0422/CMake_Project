@@ -1,2 +1,2 @@
 # CMake_Project
-CMake Sample Project
+CMake Sample Project Structure
