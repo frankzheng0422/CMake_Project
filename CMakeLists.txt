@@ -1,5 +1,9 @@
 cmake_minimum_required(VERSION 3.1)
-project (sample_project VERSION 1.0.0 LANGUAGES CXX)
+project (sample_project VERSION "1.0" LANGUAGES CXX)
+
+# Get the current date in YYMMDD format
+string(TIMESTAMP CURRENT_DATE "%y%m%d")
+set (PROJECT_VERSION_PATCH "${CURRENT_DATE}")
 
 set (CMAKE_CXX_STANDARD 14)
 set (CMAKE_INSTALL_PREFIX ${CMAKE_BINARY_DIR}/install)
@@ -9,8 +13,11 @@ message(STATUS "PROJECT_NAME: " ${PROJECT_NAME})
 message(STATUS "PROJECT_VERSION: " ${PROJECT_VERSION})
 message(STATUS "CMAKE_BINARY_DIR: " ${CMAKE_BINARY_DIR})
 message(STATUS "CMAKE_INSTALL_PREFIX: " ${CMAKE_INSTALL_PREFIX})
+message(STATUS "PROJECT_VERSION_MAJOR: " ${PROJECT_VERSION_MAJOR})
+message(STATUS "PROJECT_VERSION_MINOR: " ${PROJECT_VERSION_MINOR})
+message(STATUS "PROJECT_VERSION_PATCH: " ${PROJECT_VERSION_PATCH})
 
 add_subdirectory(src)
-add_subdirectory(external)
-add_subdirectory(test)
+#add_subdirectory(external)
+#add_subdirectory(test)
 
